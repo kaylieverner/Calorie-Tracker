@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <title>Calorie Tracker</title>
+</head>
+
+<body>
+    
+    <div class="container-full-bg">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4 text-center main-title">Calorie Tracker<i class ="fas fa-apple-alt ml-2"></i></h1>
+                <h3 class="lead text-center">Ease the daily chore of logging calories!
+                </h3>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="row mt-5" id="header">
+            <div class="col-6">
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-6">
+                <div class="row ml-auto">
+                    <div class="card text-white bg-secondary border-dark mt-5" style="width: 60rem;">
+                        <div class="card-body">
+                            <h2 class="card-title">Daily Meal Logger:</h2>
+                            <select class="form-control form-control-lg" id="mealSelector">
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="snack">Snack</option>
+                            </select>
+                            <div class="input-group mt-3 mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">Food:</span>
+                                </div>
+                                <input type="text" class="form-control" id="foodSearch" aria-describedby="basic-addon3">
+                            </div>
+                            <button type="button" class="btn btn-success" id="searchBtn">Search <i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ml-auto">
+                    <div class="card text-white bg-secondary border-dark mt-5" id="searchCard" style="width: 60rem; height: 35rem;">
+                        <div class="card-body">
+                            <h2 class="card-title">Search Results:</h2>
+                            <div class="foodOptions">
+                                <ul class="list-group list-group-flush">
+                                    <button type="button" class="btn btn-success hide mt-3 foodOption "
+                                        id="foodBtn0">Add</button>
+                                    <button type="button" class="btn btn-success hide mt-3 foodOption"
+                                        id="foodBtn1">Add</button>
+                                    <button type="button" class="btn btn-success hide mt-3 foodOption"
+                                        id="foodBtn2">Add</button>
+                                    <button type="button" class="btn btn-success hide mt-3 foodOption"
+                                        id="foodBtn3">Add</button>
+                                    <button type="button" class="btn btn-success hide mt-3 foodOption"
+                                        id="foodBtn4">Add</button>
+                                    <button type="button" class="btn btn-success hide mt-3 foodOption"
+                                        id="foodBtn5">Add</button>
+                                    <button type="button" class="btn btn-success hide mt-3 foodOption"
+                                        id="foodBtn6">Add</button>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+
+                <div class="mt-5" id="donutchart" style="width: 900px; height: 500px"></div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row ml-auto mr-auto mt-5">
+        <div class="col-3">
+            <div class="card border-dark">
+                <div class="thumbnail_container">
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                            class="card-img-top" alt="picture of breakfast">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Breakfast</h4>
+                </div>
+                <div class="foodLog">
+                    <table class="table breakfastTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Food</th>
+                                <th scope="col">Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody class="breakfastTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card border-dark">
+                <div class="thumbnail_container">
+                    <div class="thumbnail">
+                        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2018/01/lunch-ideas.jpg"
+                            class="card-img-top" alt="picture of sandwich">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Lunch</h4>
+                </div>
+                <div class="foodLog">
+                    <table class="table lunchTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Food</th>
+                                <th scope="col">Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody class="lunchTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card border-dark">
+                <div class="thumbnail_container">
+                    <div class="thumbnail">
+                        <img src="https://media1.popsugar-assets.com/files/thumbor/KD9ALbJbbvNqaYBI-L3zykcOpMw/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2019/11/18/102/n/1922729/2010a3325dd3450317e273.27544324_/i/healthy-meal-prep-dinner-recipes.jpg"
+                            class="card-img-top" alt="picture of pasta dinner">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Dinner</h4>
+                </div>
+                <div class="foodLog">
+                    <table class="table dinnerTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Food</th>
+                                <th scope="col">Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody class="dinnerTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card border-dark">
+                <div class="thumbnail_container">
+                    <div class="thumbnail">
+                        <img src="https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/x17/2018_Sweet-Sallty-Snack-Mix_5817_600x600.jpg?ext=.jpg"
+                            class="card-img-top" alt="picture of snacks">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Snacks</h4>
+                </div>
+                <div class="foodLog">
+                    <table class="table snacksTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Food</th>
+                                <th scope="col">Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody class="snacksTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer font-small mt-5">
+        <div class="footer-copyright text-center py-3 footer-text">Team 3
+          <a class="footer-text" href="https://github.com/dswinicki8/Calories-tracker">Github</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
